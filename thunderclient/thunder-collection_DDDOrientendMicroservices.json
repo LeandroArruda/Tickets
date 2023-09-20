@@ -1,0 +1,82 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "DDDOrientendMicroservices",
+    "dateExported": "2023-09-20T15:19:18.547Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "3a1158cf-0097-4bf2-b161-d9dd9efb027b",
+            "colId": "4b141eab-2299-4b13-8bb3-59d925c8f75a",
+            "containerId": "",
+            "name": "Create Order",
+            "url": "orders",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-08-20T21:28:54.836Z",
+            "modified": "2023-09-20T14:50:41.399Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"MovieSessionId\":\"A629492C-1E1F-4B5B-977F-CF2C3B273179\",\n  \"BuyerId\": \"D1CBBBD0-59AC-4648-AAD1-94E72DC92B9A\",\n  \"OrderDateAndTime\":\"2023-09-18T13:35:14.797Z\",\n  \"Tickets\":[\n    {\n    \"SessionSeatId\": \"0C8F34BA-3DE2-4A35-8033-FEFBBCDA1698\",\n    \"Value\":\"18\"\n    }\n  ]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "dad0c425-5b04-4760-98a4-9c8ab9d69b39",
+            "colId": "4b141eab-2299-4b13-8bb3-59d925c8f75a",
+            "containerId": "",
+            "name": "Create MovieSession",
+            "url": "MovieSessions",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-08-20T21:48:07.009Z",
+            "modified": "2023-09-20T14:51:12.589Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n        \"RoomId\":\"4062E5C7-6CD6-4571-9083-5FC3A891B65E\",\n        \"MovieId\":\"b903ed58-2223-494b-a399-5c50c05a1824\",\n        \"StartDateTime\":\"2023-08-24T15:00:00.000Z\",\n        \"EndDateTime\":\"2023-09-22T21:00:00.000Z\",\n        \"BreakDuration\":\"0\",\n        \"Advertisements\":[\"\"],\n        \"SessionSeats\":[\n          {\"LineId\":\"3\", \"RowId\":\"a\", \"Value\":\"22\"}\n          ]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1851f4b9-07de-4bf4-91c9-19ba5b6fb637",
+            "colId": "4b141eab-2299-4b13-8bb3-59d925c8f75a",
+            "containerId": "",
+            "name": "Reserve Seat",
+            "url": "MovieSessions/{movieSessionId}/Seats/{sessionSeatId}/Reserve",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2023-08-21T07:36:20.613Z",
+            "modified": "2023-09-20T14:50:22.286Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "movieSessionId",
+                    "value": "A629492C-1E1F-4B5B-977F-CF2C3B273179",
+                    "isPath": true
+                },
+                {
+                    "name": "sessionSeatId",
+                    "value": "0C8F34BA-3DE2-4A35-8033-FEFBBCDA1698",
+                    "isPath": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "\n",
+                "form": []
+            },
+            "tests": []
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "http://localhost:34000/api/"
+        }
+    }
+}
