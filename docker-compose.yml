@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+
+  sqldata:
+    environment:
+      - MSSQL_SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "5433:1433"
+    image: mcr.microsoft.com/mssql/server:2017-latest 
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    
